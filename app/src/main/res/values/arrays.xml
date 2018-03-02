@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listArray">
+        <item>Headings</item>
+        <item>Headings and Details</item>
+        <item>All Data</item>
+    </string-array>
+
+    <string-array name="listValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <array name="base_vis">
+        <item>@color/baseVis1</item>
+        <item>@color/baseVis2</item>
+        <item>@color/baseVis3</item>
+        <item>@color/baseVis4</item>
+    </array>
+    <array name="pink_vis">
+        <item>@color/pinkVis1</item>
+        <item>@color/pinkVis2</item>
+        <item>@color/pinkVis3</item>
+        <item>@color/pinkVis4</item>
+    </array>
+
+    <array name="dark_vis">
+        <item>@color/darkVis1</item>
+        <item>@color/darkVis2</item>
+        <item>@color/darkVis3</item>
+        <item>@color/darkVis4</item>
+    </array>
+</resources>

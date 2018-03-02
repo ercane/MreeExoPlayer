@@ -1,0 +1,480 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+
+    <style name="TreeNodeStyleCustom">
+        <item name="android:paddingLeft">20dp</item>
+        <!--<item name="android:showDividers">middle</item>-->
+        <!--<item name="android:divider">@android:drawable/divider_horizontal_bright</item>-->
+    </style>
+
+    <style name="TreeNodeStyleDivided">
+        <item name="android:showDividers">middle</item>
+        <item name="android:divider">@android:drawable/divider_horizontal_bright</item>
+    </style>
+    <style name="TreeNodeStyle">
+        <item name="android:paddingLeft">30dp</item>
+    </style>
+    <style name="Base" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+
+        <item name="android:titleTextStyle">@style/Base.ActionBar.TitleTextStyle</item>
+        <item name="actionBarTabTextStyle">@style/Base.ActionBar.TitleTextStyle</item>
+        <item name="colorPrimary">@color/basePrimary</item>
+        <item name="colorPrimaryDark">@color/basePrimaryDark</item>
+        <item name="colorAccent">@color/baseAccent</item>
+        <item name="android:colorBackground">@color/background_material_light</item>
+        <item name="android:windowActionBar">true</item>
+
+        <!-- COLORS  -->
+        <item name="titleTextColor">@color/baseTitleWhite</item>
+        <item name="albumTextColor">@color/baseAlbumWhite</item>
+        <item name="artistTextColor">@color/baseArtistWhite</item>
+
+        <item name="titleTextDarkColor">@color/baseTitle</item>
+        <item name="albumTextDarkColor">@color/baseAlbum</item>
+        <item name="artistTextDarkColor">@color/baseArtist</item>
+
+        <item name="mainBackground">@color/baseMain</item>
+        <item name="playbackBackground">@color/basePlayback</item>
+        <item name="popupBackground">@color/basePrimary</item>
+        <item name="buttonSolid">@color/baseButtonSolid</item>
+        <item name="buttonStroke">@color/baseButtonStroke</item>
+        <item name="buttonGraStart">@color/baseButtonGraStart</item>
+        <item name="buttonGraEnd">@color/baseButtonGraEnd</item>
+
+        <!-- DIMEN  -->
+        <item name="titleTextSize">@dimen/baseTitle</item>
+        <item name="albumTextSize">@dimen/baseAlbum</item>
+        <item name="artistTextSize">@dimen/baseArtist</item>
+        <item name="statusTextSize">@dimen/baseStatus</item>
+        <item name="bigTextSize">@dimen/bigTextSize</item>
+        <item name="biggestTextSize">@dimen/biggestTextSize</item>
+
+        <!-- ICONS -->
+        <item name="playlistIcon">@drawable/ic_playlist_dark</item>
+        <item name="searchMenuIcon">@mipmap/ic_search_white_trim</item>
+        <item name="shuffleIcon">@drawable/ic_shuffle_white</item>
+        <item name="playIcon">@drawable/ic_play_white</item>
+        <item name="pauseIcon">@drawable/ic_pause_white</item>
+        <item name="nextIcon">@drawable/ic_next_white</item>
+        <item name="prevIcon">@drawable/ic_prev_white</item>
+        <item name="loopIcon">@drawable/ic_loop_white</item>
+
+        <!-- DRAWABLE BACKGROUNDS-->
+
+        <item name="visArray">@array/base_vis</item>
+    </style>
+
+    <style name="Base.ActionBar" parent="@android:style/TextAppearance">
+        <item name="android:background">@drawable/bckgrnd_actionbar</item>
+        <item name="background">@drawable/bckgrnd_actionbar</item>
+    </style>
+
+    <style name="Base.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/baseText</item>
+        <item name="android:background">@drawable/bckgrnd_actionbar</item>
+        <item name="background">@drawable/bckgrnd_actionbar</item>
+    </style>
+
+    <style name="Base.Title" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/baseTitle</item>
+        <item name="android:textSize">@dimen/baseTitle</item>
+    </style>
+
+    <style name="Base.Album" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/baseAlbum</item>
+        <item name="android:textSize">@dimen/baseAlbum</item>
+        <item name="android:text">italic</item>
+    </style>
+
+    <style name="Base.Artist" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/baseArtist</item>
+        <item name="android:textSize">@dimen/baseArtist</item>
+        <item name="android:text">normal|italic</item>
+    </style>
+
+    <style name="Base.Title.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/baseTitleWhite</item>
+        <item name="android:textSize">@dimen/baseTitle</item>
+    </style>
+
+    <style name="Base.Album.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/baseAlbumWhite</item>
+        <item name="android:textSize">@dimen/baseAlbum</item>
+        <item name="android:text">italic</item>
+    </style>
+
+    <style name="Base.Artist.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/baseArtistWhite</item>
+        <item name="android:textSize">@dimen/baseArtist</item>
+        <item name="android:text">normal|italic</item>
+    </style>
+
+    <style name="Base.Status" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/baseStatus</item>
+        <item name="android:textSize">@dimen/baseStatus</item>
+        <item name="android:text">normal|italic</item>
+    </style>
+
+    <style name="Base.Error" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/holo_red_light</item>
+        <item name="android:textSize">@dimen/baseError</item>
+        <item name="android:text">italic</item>
+    </style>
+
+
+    <style name="Base.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="Base.Playback">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowBackground">@color/basePlayback</item>
+    </style>
+
+    <style name="Base.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:titleTextStyle">@style/Base.ActionBar.TitleTextStyle</item>
+        <item name="actionBarTabTextStyle">@style/Base.ActionBar.TitleTextStyle</item>
+        <item name="colorPrimary">@color/basePrimary</item>
+        <item name="colorPrimaryDark">@color/basePrimaryDark</item>
+        <item name="colorAccent">@color/baseAccent</item>
+    </style>
+
+    <style name="Base.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:titleTextStyle">@style/Base.ActionBar.TitleTextStyle</item>
+        <item name="actionBarTabTextStyle">@style/Base.ActionBar.TitleTextStyle</item>
+        <item name="colorPrimary">@color/basePrimary</item>
+        <item name="colorPrimaryDark">@color/basePrimaryDark</item>
+        <item name="colorAccent">@color/baseAccent</item>
+    </style>
+
+
+    <!-- ***************************************************************
+    ********************************ICE**********************************-->
+
+    <style name="Ice" parent="Theme.AppCompat.Light">
+        <item name="android:titleTextStyle">@style/Ice.ActionBar.TitleTextStyle</item>
+        <item name="actionBarTabTextStyle">@style/Ice.ActionBar.TitleTextStyle</item>
+        <item name="colorPrimary">@color/icePrimary</item>
+        <item name="colorPrimaryDark">@color/icePrimaryDark</item>
+        <item name="colorAccent">@color/iceAccent</item>
+        <item name="android:colorBackground">@color/background_material_light</item>
+        <item name="android:windowActionBar">true</item>
+
+        <!-- COLORS  -->
+        <item name="titleTextColor">@color/iceTitleWhite</item>
+        <item name="albumTextColor">@color/iceAlbumWhite</item>
+        <item name="artistTextColor">@color/iceArtistWhite</item>
+
+        <item name="titleTextDarkColor">@color/iceTitle</item>
+        <item name="albumTextDarkColor">@color/iceAlbum</item>
+        <item name="artistTextDarkColor">@color/iceArtist</item>
+
+        <item name="mainBackground">@color/iceMain</item>
+        <item name="playbackBackground">@color/icePlayback</item>
+        <item name="popupBackground">@color/icePrimary</item>
+
+        <!-- DIMEN  -->
+        <item name="titleTextSize">@dimen/iceTitle</item>
+        <item name="albumTextSize">@dimen/iceAlbum</item>
+        <item name="artistTextSize">@dimen/iceArtist</item>
+        <item name="statusTextSize">@dimen/baseStatus</item>
+        <item name="bigTextSize">@dimen/bigTextSize</item>
+        <item name="biggestTextSize">@dimen/biggestTextSize</item>
+
+        <!-- ICONS -->
+        <item name="addAccountIcon">@drawable/ic_playlist_add</item>
+        <item name="addPlaylistIcon">@drawable/ic_playlist_add</item>
+        <item name="searchMenuIcon">@mipmap/ic_search_white_trim</item>
+        <item name="shuffleIcon">@drawable/ic_shuffle_white</item>
+        <item name="playIcon">@drawable/ic_play_white</item>
+        <item name="pauseIcon">@drawable/ic_pause_white</item>
+        <item name="nextIcon">@drawable/ic_next_white</item>
+        <item name="prevIcon">@drawable/ic_prev_white</item>
+        <item name="loopIcon">@drawable/ic_loop_white</item>
+
+        <item name="visArray">@array/dark_vis</item>
+    </style>
+
+    <style name="Ice.ActionBar" parent="@android:style/TextAppearance">
+        <item name="android:background">@drawable/bckgrnd_actionbar</item>
+        <item name="background">@drawable/bckgrnd_actionbar</item>
+    </style>
+
+    <style name="Ice.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/iceText</item>
+        <item name="android:background">@drawable/bckgrnd_actionbar</item>
+        <item name="background">@drawable/bckgrnd_actionbar</item>
+    </style>
+
+    <style name="Ice.Title" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/iceTitle</item>
+        <item name="android:textSize">@dimen/iceTitle</item>
+    </style>
+
+    <style name="Ice.Album" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/iceAlbum</item>
+        <item name="android:textSize">@dimen/iceAlbum</item>
+        <item name="android:text">italic</item>
+    </style>
+
+    <style name="Ice.Artist" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/iceArtist</item>
+        <item name="android:textSize">@dimen/iceArtist</item>
+        <item name="android:text">normal|italic</item>
+    </style>
+
+    <style name="Ice.Title.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/iceTitleWhite</item>
+        <item name="android:textSize">@dimen/iceTitle</item>
+    </style>
+
+    <style name="Ice.Album.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/iceAlbumWhite</item>
+        <item name="android:textSize">@dimen/iceAlbum</item>
+        <item name="android:text">italic</item>
+    </style>
+
+    <style name="Ice.Artist.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/iceArtistWhite</item>
+        <item name="android:textSize">@dimen/iceArtist</item>
+        <item name="android:text">normal|italic</item>
+    </style>
+
+    <style name="Ice.Status" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/iceStatus</item>
+        <item name="android:textSize">@dimen/iceStatus</item>
+        <item name="android:text">normal|italic</item>
+    </style>
+
+    <style name="Ice.Error" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/holo_red_light</item>
+        <item name="android:textSize">@dimen/iceError</item>
+        <item name="android:text">italic</item>
+    </style>
+
+
+    <style name="Ice.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="Ice.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:titleTextStyle">@style/Ice.ActionBar.TitleTextStyle</item>
+        <item name="actionBarTabTextStyle">@style/Ice.ActionBar.TitleTextStyle</item>
+        <item name="colorPrimary">@color/icePrimary</item>
+        <item name="colorPrimaryDark">@color/icePrimaryDark</item>
+        <item name="colorAccent">@color/iceAccent</item>
+    </style>
+
+    <style name="Ice.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:titleTextStyle">@style/Ice.ActionBar.TitleTextStyle</item>
+        <item name="actionBarTabTextStyle">@style/Ice.ActionBar.TitleTextStyle</item>
+        <item name="colorPrimary">@color/icePrimary</item>
+        <item name="colorPrimaryDark">@color/icePrimaryDark</item>
+        <item name="colorAccent">@color/iceAccent</item>
+    </style>
+
+    <style name="Ice.Playback">
+        <item name="android:windowBackground">@color/icePlayback</item>
+    </style>
+
+
+    <!-- ***************************************************************
+    ********************************PINK**********************************-->
+
+    <style name="Pink" parent="Theme.AppCompat.Light">
+        <item name="android:titleTextStyle">@style/Pink.ActionBar.TitleTextStyle</item>
+        <item name="actionBarTabTextStyle">@style/Pink.ActionBar.TitleTextStyle</item>
+        <item name="colorPrimary">@color/pinkPrimary</item>
+        <item name="colorPrimaryDark">@color/pinkPrimaryDark</item>
+        <item name="colorAccent">@color/pinkAccent</item>
+        <item name="android:colorBackground">@color/background_material_light</item>
+        <item name="android:windowActionBar">true</item>
+
+        <!-- COLORS  -->
+        <item name="titleTextColor">@color/pinkTitleWhite</item>
+        <item name="albumTextColor">@color/pinkAlbumWhite</item>
+        <item name="artistTextColor">@color/pinkArtistWhite</item>
+
+        <item name="titleTextDarkColor">@color/pinkTitleWhite</item>
+        <item name="albumTextDarkColor">@color/pinkAlbumWhite</item>
+        <item name="artistTextDarkColor">@color/pinkArtistWhite</item>
+
+        <item name="mainBackground">@color/pinkMain</item>
+        <item name="playbackBackground">@color/pinkPlayback</item>
+        <item name="popupBackground">@color/pinkPrimary</item>
+
+        <!-- DIMEN  -->
+        <item name="titleTextSize">@dimen/pinkTitle</item>
+        <item name="albumTextSize">@dimen/pinkAlbum</item>
+        <item name="artistTextSize">@dimen/pinkArtist</item>
+        <item name="statusTextSize">@dimen/baseStatus</item>
+        <item name="bigTextSize">@dimen/bigTextSize</item>
+        <item name="biggestTextSize">@dimen/biggestTextSize</item>
+
+        <!-- ICONS -->
+        <item name="playlistIcon">@drawable/ic_playlist_white</item>
+        <item name="searchMenuIcon">@mipmap/ic_search_white_trim</item>
+        <item name="shuffleIcon">@drawable/ic_shuffle_white</item>
+        <item name="playIcon">@drawable/ic_play_white</item>
+        <item name="pauseIcon">@drawable/ic_pause_white</item>
+        <item name="nextIcon">@drawable/ic_next_white</item>
+        <item name="prevIcon">@drawable/ic_prev_white</item>
+        <item name="loopIcon">@drawable/ic_loop_white</item>
+
+        <!-- DRAWABLE BACKGROUNDS-->
+
+        <item name="visArray">@array/pink_vis</item>
+
+    </style>
+
+    <style name="Pink.ActionBar" parent="@android:style/TextAppearance">
+        <item name="android:background">@drawable/bckgrnd_actionbar</item>
+        <item name="background">@drawable/bckgrnd_actionbar</item>
+    </style>
+
+    <style name="Pink.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/pinkText</item>
+        <item name="android:background">@drawable/bckgrnd_actionbar</item>
+        <item name="background">@drawable/bckgrnd_actionbar</item>
+    </style>
+
+    <style name="Pink.Title" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/pinkTitle</item>
+        <item name="android:textSize">@dimen/baseTitle</item>
+    </style>
+
+    <style name="Pink.Album" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/pinkAlbum</item>
+        <item name="android:textSize">@dimen/baseAlbum</item>
+        <item name="android:text">italic</item>
+    </style>
+
+    <style name="Pink.Artist" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/pinkArtist</item>
+        <item name="android:textSize">@dimen/pinkArtist</item>
+        <item name="android:text">normal|italic</item>
+    </style>
+
+    <style name="Pink.Title.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/pinkTitleWhite</item>
+        <item name="android:textSize">@dimen/pinkTitle</item>
+    </style>
+
+    <style name="Pink.Album.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/pinkAlbumWhite</item>
+        <item name="android:textSize">@dimen/pinkAlbum</item>
+        <item name="android:text">italic</item>
+    </style>
+
+    <style name="Pink.Artist.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/pinkArtistWhite</item>
+        <item name="android:textSize">@dimen/pinkArtist</item>
+        <item name="android:text">normal|italic</item>
+    </style>
+
+    <style name="Pink.Status" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/pinkStatus</item>
+        <item name="android:textSize">@dimen/pinkStatus</item>
+        <item name="android:text">normal|italic</item>
+    </style>
+
+    <style name="Pink.Error" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/holo_red_light</item>
+        <item name="android:textSize">@dimen/pinkError</item>
+        <item name="android:text">italic</item>
+    </style>
+
+
+    <style name="Pink.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="Pink.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:titleTextStyle">@style/Pink.ActionBar.TitleTextStyle</item>
+        <item name="actionBarTabTextStyle">@style/Pink.ActionBar.TitleTextStyle</item>
+        <item name="colorPrimary">@color/pinkPrimary</item>
+        <item name="colorPrimaryDark">@color/pinkPrimaryDark</item>
+        <item name="colorAccent">@color/pinkAccent</item>
+    </style>
+
+    <style name="Pink.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:titleTextStyle">@style/Pink.ActionBar.TitleTextStyle</item>
+        <item name="actionBarTabTextStyle">@style/Pink.ActionBar.TitleTextStyle</item>
+        <item name="colorPrimary">@color/pinkPrimary</item>
+        <item name="colorPrimaryDark">@color/pinkPrimaryDark</item>
+        <item name="colorAccent">@color/pinkAccent</item>
+    </style>
+
+    <style name="PinkPlayback" parent="Pink">
+        <item name="android:windowBackground">@color/pinkPlayback</item>
+    </style>
+
+    <!-- Light base activity theme -->
+    <style name="Dark" parent="Theme.AppCompat">
+
+        <item name="colorPrimary">@color/darkPrimary</item>
+        <item name="colorPrimaryDark">@color/darkPrimaryDark</item>
+        <item name="colorAccent">@color/darkAccent</item>
+
+        <!-- COLORS  -->
+        <item name="titleTextColor">@color/darkTitleWhite</item>
+        <item name="albumTextColor">@color/darkAlbumWhite</item>
+        <item name="artistTextColor">@color/darkArtistWhite</item>
+
+        <item name="titleTextDarkColor">@color/darkTitle</item>
+        <item name="albumTextDarkColor">@color/darkAlbum</item>
+        <item name="artistTextDarkColor">@color/darkArtist</item>
+
+        <item name="mainBackground">@color/darkMain</item>
+        <item name="playbackBackground">@color/darkPlayback</item>
+        <item name="popupBackground">@color/darkPrimary</item>
+
+        <!-- DIMEN  -->
+        <item name="titleTextSize">@dimen/baseTitle</item>
+        <item name="albumTextSize">@dimen/baseAlbum</item>
+        <item name="artistTextSize">@dimen/baseArtist</item>
+        <item name="statusTextSize">@dimen/baseStatus</item>
+        <item name="bigTextSize">@dimen/bigTextSize</item>
+        <item name="biggestTextSize">@dimen/biggestTextSize</item>
+
+        <!-- ICONS -->
+        <item name="playlistIcon">@drawable/ic_playlist_white</item>
+        <item name="searchMenuIcon">@mipmap/ic_search_white_trim</item>
+        <item name="shuffleIcon">@drawable/ic_shuffle_white</item>
+        <item name="playIcon">@drawable/ic_play_white</item>
+        <item name="pauseIcon">@drawable/ic_pause_white</item>
+        <item name="nextIcon">@drawable/ic_next_white</item>
+        <item name="prevIcon">@drawable/ic_prev_white</item>
+        <item name="loopIcon">@drawable/ic_loop_white</item>
+        <!-- DRAWABLE BACKGROUNDS-->
+
+        <item name="visArray">@array/dark_vis</item>
+    </style>
+
+    <style name="Dark.ActionBar" parent="@android:style/TextAppearance">
+        <item name="android:background">@color/darkMain</item>
+        <item name="background">@color/darkMain</item>
+    </style>
+
+    <style name="Dark.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+</resources>

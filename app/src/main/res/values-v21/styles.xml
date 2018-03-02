@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Blue" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/holo_blue_bright</item>
+        <item name="colorPrimaryDark">@android:color/holo_blue_dark</item>
+        <item name="colorAccent">@android:color/holo_blue_light</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:colorForeground">@android:color/holo_blue_light</item>
+        <item name="android:navigationBarColor">@color/baseArtist</item>
+    </style>
+    <style name="Theme.Blue.Light.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/icePrimary</item>
+        <item name="colorPrimaryDark">@color/icePrimaryDark</item>
+        <item name="colorAccent">@color/iceAccent</item>
+        <item name="android:colorBackground">@color/icePlayback</item>
+    </style>
+</resources>

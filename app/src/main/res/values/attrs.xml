@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CarouselPicker">
+        <attr name="items_visible"/>
+    </declare-styleable>
+    <attr name="items_visible" format="enum">
+        <enum name="three" value="3"/>
+        <enum name="five" value="5"/>
+        <enum name="seven" value="7"/>
+    </attr>
+    <declare-styleable name="HorizontalPickerView">
+        <attr name="textSize" format="dimension"/>
+        <attr name="backgroundSelector" format="reference"/>
+        <attr name="textColorSelector" format="reference"/>
+        <attr name="itemHeight" format="dimension"/>
+        <attr name="itemWidth" format="dimension"/>
+        <attr name="itemMargin" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="sb_shadow_radius" format="reference|dimension"/>
+        <attr name="sb_shadow_offset" format="reference|dimension"/>
+        <attr name="sb_shadow_color" format="reference|color"/>
+        <attr name="sb_uncheck_color" format="reference|color"/>
+        <attr name="sb_checked_color" format="reference|color"/>
+
+        <attr name="sb_border_width" format="reference|dimension"/>
+        <attr name="sb_checkline_color" format="reference|color"/>
+        <attr name="sb_checkline_width" format="reference|dimension"/>
+        <attr name="sb_uncheckcircle_color" format="reference|color"/>
+        <attr name="sb_uncheckcircle_width" format="reference|dimension"/>
+        <attr name="sb_uncheckcircle_radius" format="reference|dimension"/>
+
+        <attr name="sb_checked" format="reference|boolean"/>
+        <attr name="sb_shadow_effect" format="reference|boolean"/>
+        <attr name="sb_effect_duration" format="reference|integer"/>
+        <attr name="sb_button_color" format="reference|color"/>
+        <attr name="sb_show_indicator" format="reference|boolean"/>
+        <attr name="sb_background" format="reference|color"/>
+        <attr name="sb_enable_effect" format="reference|boolean"/>
+    </declare-styleable>
+    <!-- COLORS  -->
+    <attr name="titleTextColor" format="color"/>
+    <attr name="albumTextColor" format="color"/>
+    <attr name="artistTextColor" format="color"/>
+
+    <attr name="titleTextDarkColor" format="color"/>
+    <attr name="albumTextDarkColor" format="color"/>
+    <attr name="artistTextDarkColor" format="color"/>
+
+    <attr name="mainBackground" format="color"/>
+    <attr name="playbackBackground" format="color"/>
+    <attr name="popupBackground" format="color"/>
+    <attr name="buttonSolid" format="color"/>
+    <attr name="buttonStroke" format="color"/>
+    <attr name="buttonGraStart" format="color"/>
+    <attr name="buttonGraEnd" format="color"/>
+
+    <!-- DIMEN  -->
+    <attr name="titleTextSize" format="dimension"/>
+    <attr name="albumTextSize" format="dimension"/>
+    <attr name="artistTextSize" format="dimension"/>
+    <attr name="statusTextSize" format="dimension"/>
+    <attr name="bigTextSize" format="dimension"/>
+    <attr name="biggestTextSize" format="dimension"/>
+
+    <!-- ICONS -->
+    <attr name="addAccountIcon" format="integer"/>
+    <attr name="playlistIcon" format="integer"/>
+    <attr name="addPlaylistIcon" format="integer"/>
+    <attr name="searchMenuIcon" format="integer"/>
+    <attr name="foldersIcon" format="integer"/>
+    <attr name="shuffleIcon" format="integer"/>
+    <attr name="playIcon" format="integer"/>
+    <attr name="pauseIcon" format="integer"/>
+    <attr name="nextIcon" format="integer"/>
+    <attr name="prevIcon" format="integer"/>
+    <attr name="loopIcon" format="integer"/>
+
+    <!-- DRAWABLE BACKGROUNDS-->
+    <attr name="generalBackground" format="integer"/>
+
+    <!--ARRAYS-->
+    <attr name="visArray" format="integer"/>
+
+
+    <attr name="downButtonIcon" format="integer"/>
+</resources>

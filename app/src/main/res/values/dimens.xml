@@ -1,0 +1,46 @@
+<resources>
+    <item name="three_items" format="float" type="dimen">1.7</item>
+    <item name="five_items" format="float" type="dimen">1.4</item>
+    <item name="seven_items" format="float" type="dimen">1.16</item>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">10dp</dimen>
+    <dimen name="settings_height">60dp</dimen>
+    <dimen name="popup_option_height">45dp</dimen>
+
+    <dimen name="baseAlbum">12sp</dimen>
+    <dimen name="baseTitle">16sp</dimen>
+    <dimen name="baseArtist">12sp</dimen>
+    <dimen name="baseStatus">10sp</dimen>
+    <dimen name="baseError">25sp</dimen>
+    <dimen name="baseRowIcon">84dp</dimen>
+    <dimen name="bigTextSize">25dp</dimen>
+    <dimen name="biggestTextSize">50dp</dimen>
+
+    <dimen name="iceAlbum">12sp</dimen>
+    <dimen name="iceTitle">18sp</dimen>
+    <dimen name="iceArtist">12sp</dimen>
+    <dimen name="iceStatus">8sp</dimen>
+    <dimen name="iceError">25sp</dimen>
+
+    <dimen name="pinkAlbum">12sp</dimen>
+    <dimen name="pinkTitle">18sp</dimen>
+    <dimen name="pinkArtist">12sp</dimen>
+    <dimen name="pinkStatus">8sp</dimen>
+    <dimen name="pinkError">25sp</dimen>
+    <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="item_width">200dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <dimen name="bubble_size">50dp</dimen>
+    <dimen name="wave_height">120dp</dimen>
+    <dimen name="footer_height">350dp</dimen>
+
+    <dimen name="cover_size">60dp</dimen>
+</resources>
