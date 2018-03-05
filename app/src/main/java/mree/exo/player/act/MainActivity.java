@@ -86,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
                         mMediaControllerCompat.registerCallback(mMediaControllerCompatCallback);
                         MediaControllerCompat.setMediaController(MainActivity.this,
                                 mMediaControllerCompat);
-                        MediaControllerCompat.getMediaController(MainActivity.this)
+                   /*     MediaControllerCompat.getMediaController(MainActivity.this)
                                 .getTransportControls().playFromMediaId(String
                                 .valueOf
-                                        (R.raw.warner_tautz_off_broadway), null);
+                                        (R.raw.warner_tautz_off_broadway), null);*/
 
                     } catch (RemoteException e) {
 
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
         };
         fillAudioList();
 
-        mPlayPauseToggleButton = (Button) findViewById(R.id.button);
+        //mPlayPauseToggleButton = (Button) findViewById(R.id.button);
 
         mMediaBrowserCompat = new MediaBrowserCompat(this, new ComponentName(this,
                 BackgroundAudioService.class),
