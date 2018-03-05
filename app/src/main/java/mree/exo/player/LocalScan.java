@@ -12,7 +12,6 @@ import java.io.File;
 import java.util.concurrent.Callable;
 
 import mree.cloud.music.player.common.model.SongInfo;
-import mree.cloud.music.player.common.model.SourceInfo;
 import mree.cloud.music.player.common.ref.SourceType;
 import mree.cloud.music.player.common.ref.audio.AudioStatus;
 import mree.exo.player.database.DbEntryService;
@@ -23,14 +22,14 @@ import mree.exo.player.database.DbEntryService;
 
 public class LocalScan {
     private Context context;
-    private SourceInfo sourceInfo;
     private ContentResolver contentResolver;
     private Callable<String> scanThread;
 
-    public LocalScan(Context context, SourceInfo accountInfo) {
+
+    public LocalScan(Context context) {
         this.context = context;
-        this.sourceInfo = accountInfo;
     }
+
 
 
     public Callable<String> getScanThread() {
@@ -70,7 +69,7 @@ public class LocalScan {
                                 String albumId = cursor.getString(albumIdColumn);
                                 Long year = cursor.getLong(yearColumn);
                                 Long duration = cursor.getLong(durationColumn);
-                                si.setAccountId(sourceInfo.getId());
+                                si.setAccountId("1");
                                 si.setId(id.toString());
                                 si.setSourceType(SourceType.LOCAL);
 

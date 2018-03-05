@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MreeExoPlayer.iml" filepath="$PROJECT_DIR$/MreeExoPlayer.iml" />
+      <module fileurl="file://C:\workspace\mitril\MreeExoPlayer\MreeExoPlayer.iml" filepath="C:\workspace\mitril\MreeExoPlayer\MreeExoPlayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\workspace\mitril\MreeExoPlayer\app\app.iml" filepath="C:\workspace\mitril\MreeExoPlayer\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://C:\workspace\mitril\MreeExoPlayer\common\common.iml" filepath="C:\workspace\mitril\MreeExoPlayer\common\common.iml" />
     </modules>
   </component>
 </project>

@@ -248,6 +248,7 @@
         collapsed. Also, you can close Bubble Controller from Settings forever....
     </string>
     <string name="equlizer_try_playback_error">Please try again when playing any audio.</string>
+    <string name="error_no_metadata">No Metadata</string>
 
 
 </resources>
