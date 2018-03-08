@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mree.cloud.music.player.common.model.SongInfo;
-import mree.cloud.music.player.common.ref.FragmentType;
 
 /**
  * Created by mree on 24.01.2016.
@@ -31,17 +30,13 @@ public class AudioListAdapter extends ArrayAdapter<SongInfo> implements Filterab
     private ListView listView;
     private SparseBooleanArray mSelectedItemsIds;
     private Context context;
-    private FragmentType type;
-    private String typeValue;
     private List<SongInfo> songs;
     private List<SongInfo> filteredSongs;
     private Filter filter;
 
-    public AudioListAdapter(Context context, int resource, FragmentType type, String typeValue) {
+    public AudioListAdapter(Context context, int resource) {
         super(context, resource);
         this.context = context;
-        this.type = type;
-        this.typeValue = typeValue;
         this.songs = new ArrayList<>();
         mSelectedItemsIds = new SparseBooleanArray();
     }
@@ -67,6 +62,7 @@ public class AudioListAdapter extends ArrayAdapter<SongInfo> implements Filterab
         TextView album = (TextView) row.findViewById(R.id.tvAlbum);
         TextView artist = (TextView) row.findViewById(R.id.tvArtist);
 
+        title.setText(song.getTitle());
 
         if (song.getAlbum() != null) {
             album.setText(song.getAlbum());

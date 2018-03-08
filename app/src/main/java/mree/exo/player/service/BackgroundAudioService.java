@@ -6,7 +6,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.AssetFileDescriptor;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -28,6 +27,7 @@ import android.text.TextUtils;
 import java.io.IOException;
 import java.util.List;
 
+import mree.cloud.music.player.common.model.SongInfo;
 import mree.exo.player.R;
 import mree.exo.player.utils.MediaStyleHelper;
 
@@ -36,6 +36,7 @@ public class BackgroundAudioService extends MediaBrowserServiceCompat implements
 
     public static final String COMMAND_EXAMPLE = "command_example";
     private static MediaSessionCompat mMediaSessionCompat;
+    private static List<SongInfo> playlist;
     private MediaPlayer mMediaPlayer;
     private BroadcastReceiver mNoisyReceiver = new BroadcastReceiver() {
         @Override
@@ -78,7 +79,7 @@ public class BackgroundAudioService extends MediaBrowserServiceCompat implements
             super.onPlayFromMediaId(mediaId, extras);
 
             try {
-                AssetFileDescriptor afd = getResources().openRawResourceFd(Integer.valueOf
+             /*   AssetFileDescriptor afd = getResources().openRawResourceFd(Integer.valueOf
                         (mediaId));
                 if (afd == null) {
                     return;
@@ -95,7 +96,12 @@ public class BackgroundAudioService extends MediaBrowserServiceCompat implements
                             .getLength());
                 }
 
-                afd.close();
+                afd.close();*/
+
+
+                SongInfo songInfo = playlist.get(Integer.parseInt(mediaId));
+                mMediaPlayer.setDataSource(songInfo.getDownloadUrl());
+
                 initMediaSessionMetadata();
 
             } catch (IOException e) {
@@ -106,7 +112,6 @@ public class BackgroundAudioService extends MediaBrowserServiceCompat implements
                 mMediaPlayer.prepare();
             } catch (IOException e) {
             }
-
             //Work with extras here if you want
         }
 
@@ -125,8 +130,8 @@ public class BackgroundAudioService extends MediaBrowserServiceCompat implements
 
     };
 
-    public static void setPlaylist(List<MediaSessionCompat.QueueItem> list) {
-        mMediaSessionCompat.setQueue(list);
+    public static void setPlaylist(List<SongInfo> playlist) {
+        BackgroundAudioService.playlist = playlist;
     }
 
     @Override
@@ -158,7 +163,7 @@ public class BackgroundAudioService extends MediaBrowserServiceCompat implements
         mMediaPlayer = new MediaPlayer();
         mMediaPlayer.setWakeMode(getApplicationContext(), PowerManager.PARTIAL_WAKE_LOCK);
         mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        mMediaPlayer.setVolume(1.0f, 1.0f);
+        //mMediaPlayer.setVolume(1.0f, 1.0f);
     }
 
     private void showPlayingNotification() {

@@ -15,7 +15,12 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -25,6 +30,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import mree.cloud.music.player.common.model.AudioList;
 import mree.cloud.music.player.common.model.SongInfo;
 import mree.exo.player.AudioListAdapter;
@@ -34,6 +41,7 @@ import mree.exo.player.R;
 import mree.exo.player.database.Database;
 import mree.exo.player.database.DbEntryService;
 import mree.exo.player.database.DbTableService;
+import mree.exo.player.playback.MusicProvider;
 import mree.exo.player.service.BackgroundAudioService;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,8 +52,29 @@ public class MainActivity extends AppCompatActivity {
     private static Context context;
     private static Handler addHandler, finishHandler;
     private static ThreadPoolExecutor threadPoolExecutor;
+    @BindView(R.id.audioList)
+    ListView audioList;
+    @BindView(R.id.up)
+    ImageButton up;
+    @BindView(R.id.seekBar)
+    SeekBar seekBar;
+    @BindView(R.id.tb_duration)
+    TextView tbDuration;
+    @BindView(R.id.tb_shuffle)
+    ImageButton tbShuffle;
+    @BindView(R.id.tb_prev)
+    ImageButton tbPrev;
+    @BindView(R.id.tb_play)
+    ImageButton tbPlay;
+    @BindView(R.id.tb_next)
+    ImageButton tbNext;
+    @BindView(R.id.tb_refresh)
+    ImageButton tbRefresh;
+    @BindView(R.id.musicController)
+    LinearLayout musicController;
+    @BindView(R.id.drawer_layout)
+    RelativeLayout drawerLayout;
     private AudioListAdapter adapter;
-    private ListView listView;
     private int mCurrentState;
 
     private MediaBrowserCompat mMediaBrowserCompat;
@@ -86,11 +115,17 @@ public class MainActivity extends AppCompatActivity {
                         mMediaControllerCompat.registerCallback(mMediaControllerCompatCallback);
                         MediaControllerCompat.setMediaController(MainActivity.this,
                                 mMediaControllerCompat);
-                   /*     MediaControllerCompat.getMediaController(MainActivity.this)
+                     /*   if (adapter != null) {
+                            BackgroundAudioService.setPlaylist(adapter.getSongs());
+                   *//*     MediaControllerCompat.getMediaController(MainActivity.this)
                                 .getTransportControls().playFromMediaId(String
                                 .valueOf
-                                        (R.raw.warner_tautz_off_broadway), null);*/
-
+                                        (R.raw.warner_tautz_off_broadway), null);*//*
+                            MediaControllerCompat
+                                    .getMediaController(MainActivity.this)
+                                    .getTransportControls()
+                                    .playFromMediaId("0", null);
+                        }*/
                     } catch (RemoteException e) {
 
                     }
@@ -127,6 +162,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void songPicked(Integer position) {
+        MediaControllerCompat
+                .getMediaController(MainActivity.this)
+                .getTransportControls()
+                .playFromMediaId("" + position, null);
+
+        MediaControllerCompat
+                .getMediaController(MainActivity.this)
+                .getTransportControls()
+                .play();
 
     }
 
@@ -134,9 +178,11 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         context = getApplicationContext();
         getDb(getApplicationContext());
+        createTables();
         addHandler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
@@ -167,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
         mMediaBrowserCompat.connect();
 
-        mPlayPauseToggleButton.setOnClickListener(new View.OnClickListener() {
+      /*  mPlayPauseToggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -185,7 +231,9 @@ public class MainActivity extends AppCompatActivity {
                     mCurrentState = STATE_PAUSED;
                 }
             }
-        });
+        });*/
+        MusicProvider provider = new MusicProvider();
+        provider.retrieveMediaAsync(null);
 
     }
 
@@ -206,12 +254,12 @@ public class MainActivity extends AppCompatActivity {
             LocalScan scan = new LocalScan(getApplicationContext());
             getThreadPool().submit(scan.getScanThread());
         } else {
-
-            listView.setAdapter(adapter);
-            listView.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE_MODAL);
+            adapter = new AudioListAdapter(this, R.layout.layout_audio_row);
+            audioList.setAdapter(adapter);
+            audioList.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE_MODAL);
             //listView.setItemsCanFocus(true);
             //listView.setDivider(null);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            audioList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -224,10 +272,12 @@ public class MainActivity extends AppCompatActivity {
                         AudioList listObj = new AudioList();
                         listObj.setList(songs);
 
+                        BackgroundAudioService.setPlaylist(songs);
+
                         songPicked(position);
 
                     } else {
-                        listView.getChildAt(position).setEnabled(false);
+                        audioList.getChildAt(position).setEnabled(false);
                     }
 
                 }
